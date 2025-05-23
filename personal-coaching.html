@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Coaching - Your Name</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        .modal { transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; }
+        .modal-content { transition: transform 0.3s ease-in-out; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-sky-700 hover:text-sky-600 transition-colors">Your Name</a>
+            <div class="space-x-4">
+                <a href="index.html" class="text-slate-600 hover:text-sky-700 transition-colors">Home</a>
+                <a href="personal-coaching.html#about-coaching" class="text-slate-600 hover:text-sky-700 transition-colors">About Coaching</a>
+                <a href="personal-coaching.html#coaching-services" class="text-slate-600 hover:text-sky-700 transition-colors">Services</a>
+                <a href="professional-consulting.html" class="text-slate-600 hover:text-sky-700 transition-colors">Professional Consulting</a>
+                <a href="personal-coaching.html#booking-personal" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-4 py-2 rounded-lg shadow-sm transition-transform hover:scale-105">Book Coaching</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home-coaching" class="bg-emerald-600 text-white py-20 md:py-28 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10"> <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="hero-pattern-pc" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="scale(2) rotate(30)"><rect x="0" y="0" width="100%" height="100%" fill="none"/><path d="M10-2.5L7.5 0 10 2.5 12.5 0zM0 7.5L-2.5 10 0 12.5 2.5 10zM20 7.5L17.5 10 20 12.5 22.5 10zM10 17.5L7.5 20 10 22.5 12.5 20z" stroke-width="0.5" stroke="currentColor" fill="none"/></pattern></defs><rect width="100%" height="100%" fill="url(#hero-pattern-pc)"/></svg>
+        </div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Unlock Your True Potential</h1>
+            <p class="text-xl md:text-2xl mb-8 text-emerald-50 max-w-3xl mx-auto">
+                Personalized coaching to help you navigate life's challenges, achieve your goals, and live a more fulfilling life.
+            </p>
+            <a href="#booking-personal" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg transition-transform hover:scale-105 inline-block">Book Your Discovery Call</a>
+        </div>
+    </header>
+
+    <section id="about-coaching" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-emerald-700">My Approach to Personal Coaching</h2>
+            <div class="max-w-3xl mx-auto text-lg text-slate-700 space-y-6 text-center md:text-left">
+                <p>I believe everyone has unique strengths and the capacity for profound growth. My personal coaching philosophy centers around [Your Core Coaching Philosophy, e.g., empowerment, self-discovery, actionable strategies].</p>
+                <p>Together, we will explore [Key areas you focus on, e.g., your values, limiting beliefs, aspirations]. I provide a supportive, confidential, and non-judgmental space for you to [Benefits of your coaching space, e.g., gain clarity, build confidence, develop new perspectives].</p>
+                <p>My process involves [Briefly describe your process, e.g., active listening, powerful questioning, goal setting, accountability]. I tailor each coaching journey to your individual needs, ensuring that our sessions are both insightful and impactful, leading you towards the outcomes you desire.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="coaching-services" class="py-16 md:py-24 bg-slate-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-emerald-700">Personal Coaching Services</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+                    <h3 class="text-2xl font-semibold text-emerald-700 mb-3 text-center">Life & Goal Achievement Coaching</h3>
+                    <p class="text-slate-600 mb-6 text-center flex-grow">Define your vision, set meaningful goals, and create an actionable plan to achieve them. Overcome procrastination and build momentum.</p>
+                    <button onclick="openBookingModal('Life & Goal Achievement Coaching')" class="mt-auto w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-colors">Inquire Now</button>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+                    <h3 class="text-2xl font-semibold text-emerald-700 mb-3 text-center">Career Transition Coaching</h3>
+                    <p class="text-slate-600 mb-6 text-center flex-grow">Navigate career changes with confidence. Explore new paths, identify your strengths, and develop strategies for a successful transition.</p>
+                    <button onclick="openBookingModal('Career Transition Coaching')" class="mt-auto w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-colors">Inquire Now</button>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+                    <h3 class="text-2xl font-semibold text-emerald-700 mb-3 text-center">Confidence & Mindset Coaching</h3>
+                    <p class="text-slate-600 mb-6 text-center flex-grow">Build self-esteem, overcome limiting beliefs, and cultivate a positive mindset to unlock your full potential in all areas of life.</p>
+                    <button onclick="openBookingModal('Confidence & Mindset Coaching')" class="mt-auto w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-colors">Inquire Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-emerald-700">Success Stories</h2>
+             <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-8 rounded-xl shadow-lg">
+                    <p class="text-slate-700 italic mb-6">"[Placeholder for a testimonial specific to your personal coaching. e.g., 'Working with [Your Name] helped me gain so much clarity and confidence...']"</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/50x50/E2E8F0/4A5568?text=PC1" alt="Personal Coaching Client 1" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <p class="font-semibold text-emerald-700">Client Name A</p>
+                            <p class="text-sm text-slate-500">Coaching Client</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-xl shadow-lg">
+                    <p class="text-slate-700 italic mb-6">"[Another testimonial highlighting the impact of your personal coaching. e.g., 'I was stuck and [Your Name] provided the tools and support I needed to move forward...']"</p>
+                     <div class="flex items-center">
+                        <img src="https://placehold.co/50x50/A0AEC0/4A5568?text=PC2" alt="Personal Coaching Client 2" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <p class="font-semibold text-emerald-700">Client Name B</p>
+                            <p class="text-sm text-slate-500">Coaching Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking-personal" class="py-16 md:py-24 bg-emerald-700 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Ready to Start Your Transformation?</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto text-emerald-50">Book a complimentary discovery call or a specific coaching session. Let's explore how we can work together.</p>
+            
+            <div class="bg-white/10 p-8 rounded-xl shadow-xl max-w-3xl mx-auto mb-10">
+                <h3 class="text-2xl font-semibold mb-4">Schedule Your Session Directly</h3>
+                <p class="mb-6 text-emerald-100">Embed your Calendly (or similar) widget here for direct booking of personal coaching sessions.</p>
+                <div class="bg-slate-200 text-slate-600 p-6 rounded-lg h-64 flex items-center justify-center">
+                    <p class="text-lg font-medium">Your Embedded Calendar for Personal Coaching</p>
+                </div>
+            </div>
+
+            <p class="text-lg mb-6 text-emerald-50">Or, request a specific time via the form:</p>
+            <button onclick="openBookingModal()" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-lg text-xl shadow-lg transition-transform hover:scale-105">
+                Request a Coaching Slot
+            </button>
+        </div>
+    </section>
+
+    <footer class="bg-slate-800 text-slate-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-6">
+                <a href="mailto:your.email@example.com" class="text-slate-400 hover:text-amber-500 mx-3 transition-colors">Email</a>
+                <a href="[Your LinkedIn URL]" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-amber-500 mx-3 transition-colors">LinkedIn</a>
+            </div>
+            <p>&copy; <span id="currentYearPC"></span> Your Name. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Personal Coaching Services</p>
+        </div>
+    </footer>
+
+    <div id="bookingModal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-[100] opacity-0 pointer-events-none scale-95">
+        <div class="modal-content bg-white p-8 md:p-10 rounded-xl shadow-2xl w-full max-w-lg transform scale-100 transition-transform duration-300">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold text-emerald-700">Request Coaching Slot</h3>
+                <button onclick="closeBookingModal()" class="text-slate-500 hover:text-slate-700 text-3xl">&times;</button>
+            </div>
+            <form id="bookingForm" class="space-y-6">
+                <div>
+                    <label for="servicePC" class="block text-sm font-medium text-slate-700 mb-1">Coaching Service:</label>
+                    <select id="servicePC" name="service" class="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                        <option value="">Select a Service (Optional)</option>
+                        <option value="Life & Goal Achievement Coaching">Life & Goal Achievement Coaching</option>
+                        <option value="Career Transition Coaching">Career Transition Coaching</option>
+                        <option value="Confidence & Mindset Coaching">Confidence & Mindset Coaching</option>
+                        <option value="Discovery Call">Complimentary Discovery Call</option>
+                    </select>
+                </div>
+                <div><label for="namePC" class="block text-sm font-medium text-slate-700 mb-1">Full Name:</label><input type="text" id="namePC" name="name" required class="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-emerald-500 focus:border-emerald-500"></div>
+                <div><label for="emailPC" class="block text-sm font-medium text-slate-700 mb-1">Email:</label><input type="email" id="emailPC" name="email" required class="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-emerald-500 focus:border-emerald-500"></div>
+                <div><label for="preferred_datePC" class="block text-sm font-medium text-slate-700 mb-1">Preferred Date:</label><input type="date" id="preferred_datePC" name="preferred_date" class="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-emerald-500 focus:border-emerald-500"></div>
+                <div><label for="preferred_timePC" class="block text-sm font-medium text-slate-700 mb-1">Preferred Time:</label><input type="time" id="preferred_timePC" name="preferred_time" class="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-emerald-500 focus:border-emerald-500"></div>
+                <div><label for="messagePC" class="block text-sm font-medium text-slate-700 mb-1">Message:</label><textarea id="messagePC" name="message" rows="3" class="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-emerald-500 focus:border-emerald-500"></textarea></div>
+                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-lg shadow-md text-lg">Send Request</button>
+            </form>
+            <div id="bookingConfirmationPC" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg text-center">Thank you! Your request has been sent. I'll be in touch soon.</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('currentYearPC').textContent = new Date().getFullYear();
+        const bookingModal = document.getElementById('bookingModal');
+        const bookingForm = document.getElementById('bookingForm');
+        const bookingConfirmationPC = document.getElementById('bookingConfirmationPC');
+        const serviceSelectPC = document.getElementById('servicePC');
+
+        function openBookingModal(serviceName = '') {
+            bookingModal.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+            bookingModal.classList.add('opacity-100', 'scale-100');
+            document.body.style.overflow = 'hidden';
+            bookingForm.reset();
+            if (serviceName) serviceSelectPC.value = serviceName; else serviceSelectPC.value = '';
+            bookingConfirmationPC.classList.add('hidden');
+            bookingForm.style.display = 'block';
+        }
+
+        function closeBookingModal() {
+            bookingModal.classList.add('opacity-0', 'scale-95');
+            setTimeout(() => {
+                bookingModal.classList.add('pointer-events-none');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Personal Coaching Booking Request:', {
+                service: serviceSelectPC.value, name: document.getElementById('namePC').value, email: document.getElementById('emailPC').value,
+                date: document.getElementById('preferred_datePC').value, time: document.getElementById('preferred_timePC').value, message: document.getElementById('messagePC').value
+            });
+            bookingForm.style.display = 'none';
+            bookingConfirmationPC.classList.remove('hidden');
+        });
+        bookingModal.addEventListener('click', e => { if (e.target === bookingModal) closeBookingModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && !bookingModal.classList.contains('pointer-events-none')) closeBookingModal(); });
+        
+        document.querySelectorAll('nav a[href^="personal-coaching.html#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href').split('#')[1];
+                if (targetId) {
+                    e.preventDefault();
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
