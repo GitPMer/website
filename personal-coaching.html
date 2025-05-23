@@ -57,22 +57,15 @@
     <section id="coaching-services" class="py-16 md:py-24 bg-slate-100">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-emerald-700">Personal Coaching Services</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                    <h3 class="text-2xl font-semibold text-emerald-700 mb-3 text-center">Life & Goal Achievement Coaching</h3>
-                    <p class="text-slate-600 mb-6 text-center flex-grow">Define your vision, set meaningful goals, and create an actionable plan to achieve them. Overcome procrastination and build momentum.</p>
-                    <button onclick="openBookingModal('Life & Goal Achievement Coaching')" class="mt-auto w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-colors">Inquire Now</button>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                    <h3 class="text-2xl font-semibold text-emerald-700 mb-3 text-center">Career Transition Coaching</h3>
-                    <p class="text-slate-600 mb-6 text-center flex-grow">Navigate career changes with confidence. Explore new paths, identify your strengths, and develop strategies for a successful transition.</p>
-                    <button onclick="openBookingModal('Career Transition Coaching')" class="mt-auto w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-colors">Inquire Now</button>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                    <h3 class="text-2xl font-semibold text-emerald-700 mb-3 text-center">Confidence & Mindset Coaching</h3>
-                    <p class="text-slate-600 mb-6 text-center flex-grow">Build self-esteem, overcome limiting beliefs, and cultivate a positive mindset to unlock your full potential in all areas of life.</p>
-                    <button onclick="openBookingModal('Confidence & Mindset Coaching')" class="mt-auto w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-colors">Inquire Now</button>
-                </div>
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 justify-center">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col max-w-md mx-auto">
+                    <h3 class="text-2xl font-semibold text-emerald-700 mb-3 text-center">Life & Career Coaching</h3>
+                    <p class="text-slate-600 mb-6 text-center flex-grow">Define your vision, set meaningful goals, and create an actionable plan to achieve them in your personal life and career. Overcome procrastination and build momentum towards a more fulfilling future.</p>
+                    </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col max-w-md mx-auto">
+                    <h3 class="text-2xl font-semibold text-emerald-700 mb-3 text-center">Managing Separation or Divorce</h3>
+                    <p class="text-slate-600 mb-6 text-center flex-grow">Navigate the emotional and practical challenges of separation or divorce with compassionate support and guidance. Develop strategies for resilience, co-parenting (if applicable), and rebuilding your life with confidence.</p>
+                    </div>
             </div>
         </div>
     </section>
@@ -108,17 +101,8 @@
     <section id="booking-personal" class="py-16 md:py-24 bg-emerald-700 text-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-8">Ready to Start Your Transformation?</h2>
-            <p class="text-xl mb-10 max-w-2xl mx-auto text-emerald-50">Book a complimentary discovery call or a specific coaching session. Let's explore how we can work together.</p>
+            <p class="text-xl mb-10 max-w-2xl mx-auto text-emerald-50">Let's explore how we can work together. Please fill out the form below to request a coaching slot.</p>
             
-            <div class="bg-white/10 p-8 rounded-xl shadow-xl max-w-3xl mx-auto mb-10">
-                <h3 class="text-2xl font-semibold mb-4">Schedule Your Session Directly</h3>
-                <p class="mb-6 text-emerald-100">Embed your Calendly (or similar) widget here for direct booking of personal coaching sessions.</p>
-                <div class="bg-slate-200 text-slate-600 p-6 rounded-lg h-64 flex items-center justify-center">
-                    <p class="text-lg font-medium">Your Embedded Calendar for Personal Coaching</p>
-                </div>
-            </div>
-
-            <p class="text-lg mb-6 text-emerald-50">Or, request a specific time via the form:</p>
             <button onclick="openBookingModal()" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-lg text-xl shadow-lg transition-transform hover:scale-105">
                 Request a Coaching Slot
             </button>
@@ -147,9 +131,8 @@
                     <label for="servicePC" class="block text-sm font-medium text-slate-700 mb-1">Coaching Service:</label>
                     <select id="servicePC" name="service" class="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
                         <option value="">Select a Service (Optional)</option>
-                        <option value="Life & Goal Achievement Coaching">Life & Goal Achievement Coaching</option>
-                        <option value="Career Transition Coaching">Career Transition Coaching</option>
-                        <option value="Confidence & Mindset Coaching">Confidence & Mindset Coaching</option>
+                        <option value="Life & Career Coaching">Life & Career Coaching</option>
+                        <option value="Managing Separation or Divorce">Managing Separation or Divorce</option>
                         <option value="Discovery Call">Complimentary Discovery Call</option>
                     </select>
                 </div>
@@ -176,7 +159,16 @@
             bookingModal.classList.add('opacity-100', 'scale-100');
             document.body.style.overflow = 'hidden';
             bookingForm.reset();
-            if (serviceName) serviceSelectPC.value = serviceName; else serviceSelectPC.value = '';
+            // If a specific service button was clicked (though we removed them from cards, this logic can stay for future use or direct calls)
+            // For now, the main "Request a Coaching Slot" button won't pass a serviceName.
+            if (serviceName) {
+                 serviceSelectPC.value = serviceName;
+            } else {
+                // Ensure specific service is selected if modal opened via general button
+                // If you want to pre-select one, you can do it here. Otherwise, it defaults to "Select a Service".
+                // For example, to default to "Discovery Call":
+                // serviceSelectPC.value = 'Discovery Call'; 
+            }
             bookingConfirmationPC.classList.add('hidden');
             bookingForm.style.display = 'block';
         }
